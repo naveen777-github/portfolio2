@@ -2,8 +2,10 @@
   "name": "naveen-portfolio",
   "private": true,
   "dependencies": {
+    "framer-motion": "^12.24.12",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.11.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^5.1.0"

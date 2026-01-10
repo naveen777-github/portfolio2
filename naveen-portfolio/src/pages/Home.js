@@ -1,19 +1,54 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaJava, FaPython, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { SiSpring, SiPostman } from "react-icons/si";
-import { DiJavascript1 } from "react-icons/di";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import painting from "../assets/painting.png";
+import {
+  FaJava,
+  FaPython,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaAws,
+  FaDatabase,
+  FaBrain,
+  FaLanguage,
+  FaRobot,
+  FaMicrochip,
+  FaChartBar,
+  FaGithub,
+  FaLinkedin,
+  FaCss3,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiMysql,
+  SiSpring,
+  SiPostman,
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+  SiTensorflow,
+  SiPytorch,
+} from "react-icons/si";
+
+import { FaArrowRight } from "react-icons/fa";
+import ParticlesBg from "../components/ParticlesBg";
 
 export default function Home() {
   return (
     <main className="home">
       <section className="hero">
         {/* Badge */}
+
+        <div className="particlesWrap">
+          <ParticlesBg />
+        </div>
+
         <motion.span
-          className="badge"
+          className="badge screen"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -23,7 +58,7 @@ export default function Home() {
 
         {/* Title slides from left */}
         <motion.h1
-          className="title"
+          className="title screen"
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -31,7 +66,7 @@ export default function Home() {
           Hi, I’m Naveen Rayapudi.
         </motion.h1>
 
-        <div className="hero2">
+        <div className="hero2 screen">
           {/* LEFT: Text */}
           <motion.p
             className="subtitle"
@@ -62,7 +97,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.35 }}
           >
             <Link className="btn btn-primary" to="/experience">
-              View Projects
+              View Projects <FaArrowRight className="btn-arrow" />
             </Link>
 
             <a className="btn btn-secondary" href="/resume.pdf" download>
@@ -96,6 +131,18 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <section className="middle-title">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          WHAT I’M GOOD AT
+        </motion.h2>
+      </section>
+
       {/* Software Engineering Section */}
       <section className="split">
         {/* GIF – slides from LEFT */}
@@ -125,8 +172,18 @@ export default function Home() {
             </div>
 
             <div className="stack-item">
-              <FaPython size={26} />
-              <span>Python</span>
+              <FaHtml5 size={26} />
+              <span>HTML</span>
+            </div>
+
+            <div className="stack-item">
+              <FaCss3 size={26} />
+              <span>CSS</span>
+            </div>
+
+            <div className="stack-item">
+              <FaJs size={26} />
+              <span>JavaScript</span>
             </div>
 
             <div className="stack-item">
@@ -146,24 +203,29 @@ export default function Home() {
 
             <div className="stack-item">
               <FaGitAlt size={26} />
-              <span>Git & GitHub</span>
-            </div>
-
-            <div className="stack-item">
-              <DiJavascript1 size={26} />
-              <span>OOP</span>
+              <span>Git</span>
             </div>
 
             <div className="stack-item">
               <SiSpring size={26} />
               <span>Data Structures</span>
             </div>
+
+            <div className="stack-item">
+              <FaAws size={26} />
+              <span>AWS</span>
+            </div>
+
+            <div className="stack-item">
+              <SiMongodb size={26} />
+              <span>MongoDB</span>
+            </div>
           </div>
         </motion.div>
       </section>
 
       {/* Data / ML Section */}
-      <section className="split ">
+      <section className="split data">
         {/* Stack – slides from LEFT */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -174,20 +236,60 @@ export default function Home() {
           <h2>Data & ML Stack</h2>
 
           <div className="stack">
-            {[
-              "Python",
-              "SQL",
-              "Pandas",
-              "NumPy",
-              "Scikit-learn",
-              "PyTorch",
-              "NLP",
-              "AWS",
-            ].map((item) => (
-              <div key={item} className="stack-item">
-                {item}
-              </div>
-            ))}
+            <div className="stack-item">
+              <FaDatabase size={26} />
+              <span>SQL</span>
+            </div>
+
+            <div className="stack-item">
+              <FaPython size={26} />
+              <span>Python</span>
+            </div>
+
+            <div className="stack-item">
+              <SiPandas size={26} />
+              <span>Pandas</span>
+            </div>
+
+            <div className="stack-item">
+              <SiNumpy size={26} />
+              <span>NumPy</span>
+            </div>
+
+            <div className="stack-item">
+              <SiScikitlearn size={26} />
+              <span>Scikit Learn</span>
+            </div>
+
+            <div className="stack-item">
+              <SiPytorch size={26} />
+              <span>PyTorch</span>
+            </div>
+
+            <div className="stack-item">
+              <FaLanguage size={26} />
+              <span>NLP</span>
+            </div>
+
+            <div className="stack-item">
+              <FaChartBar size={26} />
+              <span>PowerBI</span>
+            </div>
+
+            <div className="stack-item">
+              <SiTensorflow size={26} />
+              <span>TensorFlow</span>
+            </div>
+
+            <div className="stack-item">
+              <FaRobot size={26} />
+              <span>Artificial Intelligence</span>
+            </div>
+
+            <div className="stack-item">
+              <FaBrain size={26} />
+              <span>Machine Learning</span>
+            </div>
           </div>
         </motion.div>
 
@@ -202,6 +304,12 @@ export default function Home() {
           transition={{ duration: 0.7 }}
         />
       </section>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <p>© {new Date().getFullYear()} Naveen Rayapudi</p>
+        </div>
+      </footer>
     </main>
   );
 }

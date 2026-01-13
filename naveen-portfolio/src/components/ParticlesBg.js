@@ -17,14 +17,14 @@ export default function ParticlesBg() {
         fpsLimit: 60,
         detectRetina: true,
         particles: {
-          number: { value: 100, density: { enable: true, area: 900 } },
+          number: { value: 200, density: { enable: true, area: 900 } },
           color: { value: "#7DD3FC" },
           links: {
             enable: true,
             color: "#38BDF8",
-            distance: 200,
-            opacity: 4,
-            width: 1,
+            distance: 100,
+            opacity: 2,
+            width: 0.5,
           },
           move: {
             enable: true,
@@ -32,7 +32,7 @@ export default function ParticlesBg() {
             outModes: { default: "out" },
           },
           opacity: {
-            value: 0.45,
+            value: 0.5,
           },
           size: { value: { min: 1, max: 3 } },
         },
@@ -42,7 +42,7 @@ export default function ParticlesBg() {
             onClick: { enable: true, mode: "push" },
           },
           modes: {
-            repulse: { distance: 110 },
+            repulse: { distance: 100 },
             push: { quantity: 2 },
           },
         },

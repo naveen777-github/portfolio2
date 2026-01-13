@@ -2,6 +2,7 @@
   "name": "naveen-portfolio",
   "private": true,
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "framer-motion": "^12.24.12",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -28,5 +29,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }

@@ -113,7 +113,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <a
-              href="https://github.com/YOUR_GITHUB"
+              href="https://github.com/naveen777-github"
               target="_blank"
               rel="noreferrer"
             >
@@ -121,7 +121,7 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/YOUR_LINKEDIN"
+              href="https://www.linkedin.com/in/rayapudi-naveen-6042a5190/"
               target="_blank"
               rel="noreferrer"
             >

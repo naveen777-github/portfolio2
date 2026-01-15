@@ -1,11 +1,32 @@
 const projects = [
   {
     title: "Machine-Generated Text Detection",
-    desc: "Detect AI-generated content using RoBERTa and NLP features.",
-    stack: ["Python", "PyTorch", "RoBERTa", "Hugging Face"],
+    desc: "Built deep learning models to distinguish AI-generated text from human-written content using large-scale datasets. Trained Uni-LSTM and Bi-LSTM models on 610K+ samples with comparative evaluation and error analysis to study generalization limits of LLM-generated text.",
+    stack: ["Python", "PyTorch", "NLP", "Deep Learning"],
     github: "#",
     demo: "#",
     featured: true,
+  },
+  {
+    title: "Neural Machine Translation with Transformers",
+    desc: "Developed an end-to-end English–French neural machine translation pipeline using Hugging Face T5 on the IWSLT 2017 dataset. Implemented preprocessing, tokenization, training, hyperparameter tuning, and evaluation with strong METEOR and F1 scores.",
+    stack: ["Python", "Hugging Face", "Transformers", "NLP"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    title: "Stock Market Time-Series Analysis",
+    desc: "Engineered a 12+ year financial time-series dataset and built ML pipelines using regression and LSTM models. Developed an interactive Streamlit dashboard with SQL-backed analytics to visualize trends and model predictions.",
+    stack: ["Python", "Pandas", "SQL", "LSTM", "Streamlit"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    title: "Sentiment Analysis on Large-Scale Text Data",
+    desc: "Designed sentiment classification pipelines using Multinomial Naive Bayes on large textual datasets. Achieved up to 86.4% F1 score through systematic preprocessing, feature analysis, and misclassification evaluation.",
+    stack: ["Python", "Scikit-learn", "NLP", "Data Analysis"],
+    github: "#",
+    demo: "#",
   },
 ];
 
@@ -51,12 +72,6 @@ export default function Projects() {
                 <h2 className="text-lg font-semibold leading-snug group-hover:text-cyan-200">
                   {p.title}
                 </h2>
-
-                {p.featured && (
-                  <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-1 text-xs text-cyan-200">
-                    Featured
-                  </span>
-                )}
               </div>
 
               <p className="mt-2 text-sm leading-6 text-slate-300">{p.desc}</p>

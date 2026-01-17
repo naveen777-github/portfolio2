@@ -1,37 +1,106 @@
+import { desc } from "framer-motion/client";
 import { useState } from "react";
+import reactIcon from "../assets/react-svgrepo-com.svg";
+import pythonIcon from "../assets/python-svgrepo-com.svg";
+import pytorchIcon from "../assets/pytorch-svgrepo-com.svg";
+import javaIcon from "../assets/java-svgrepo-com.svg";
+import sqlIcon from "../assets/sql-svgrepo-com.svg";
+import jsIcon from "../assets/js-svgrepo-com.svg";
+import htmlIcon from "../assets/html-5-svgrepo-com.svg";
+import cssIcon from "../assets/css-3-svgrepo-com.svg";
+import netlifyIcon from "../assets/netlify-svgrepo-com.svg";
+import streamlitIcon from "../assets/Streamlit.png";
+import mavenIcon from "../assets/maven-svgrepo-com.svg";
+import junitIcon from "../assets/Junit.svg";
+import TensflowIcon from "../assets/tensorflow-svgrepo-com.svg";
+import NumpyIcon from "../assets/numpy-svgrepo-com.svg";
+import versionControlGif from "../assets/Version control.gif";
+
+const skillIcons = {
+  Python: pythonIcon,
+  PyTorch: pytorchIcon,
+  Java: javaIcon,
+  React: reactIcon,
+  SQL: sqlIcon,
+  JavaScript: jsIcon,
+  HTML: htmlIcon,
+  CSS: cssIcon,
+  Netlify: netlifyIcon,
+  streamlit: streamlitIcon,
+  Maven: mavenIcon,
+  JUnit: junitIcon,
+  Tensorflow: TensflowIcon,
+  Numpy: NumpyIcon,
+};
 
 const projects = [
   {
     title: "Machine Translation with Transformers",
-    desc: "Developed an end-to-end neural machine translation pipeline using Hugging Face Transformers (T5) on the IWSLT 2017 English–French dataset (100K samples, 10 epochs). Implemented preprocessing, tokenization, training, hyperparameter tuning, and evaluation using Precision, Recall, F1, and METEOR, achieving F1 = 0.8972 and METEOR = 0.516.",
-    stack: ["Python", "Hugging Face", "Transformers", "NLP"],
-    github: "#",
+    desc: "Developed an end-to-end custom transformer model for English-to-French translation and conducted a performance comparison with a pretrained model.",
+    stack: ["Python", "PyTorch", "NLP", "Numpy"],
+    github:
+      "https://github.com/naveen777-github/Machine-Translation-with-Transformers",
     demo: "#",
     category: "ML",
   },
   {
     title: "Machine-Generated Text Detection",
-    desc: "Designed and evaluated deep learning models (Uni-LSTM, Bi-LSTM) to distinguish machine-generated text from human-written text. Preprocessed and trained on a 610K+ sample dataset, achieving 70.18% accuracy (Uni-LSTM) and 70.11% accuracy (Bi-LSTM) with comparative loss analysis. Conducted evaluation and error analysis to assess generalization challenges and detection limitations in LLM-generated content.",
+    desc: "Designed and implemented deep learning models such as Uni-LSTM, Bi-LSTM, and RoBERTa to distinguish machine-generated text from human-written text.",
     stack: ["Python", "PyTorch", "NLP", "Deep Learning"],
-    github: "#",
+    github:
+      "https://github.com/naveen777-github/Machine-Generated-Text-Detection",
     demo: "#",
     category: "ML",
   },
   {
     title: "Stock Market Time-Series Analysis",
-    desc: "Engineered and validated a large-scale financial time-series dataset spanning 12+ years (2010–2022), including normalization, anomaly detection, and missing-value handling. Built and evaluated Regression and LSTM pipelines with a 70/30 train–test split focusing on robustness and validation. Developed an interactive analytics dashboard using Streamlit and SQL (SQLite) to visualize trends.",
-    stack: ["Python", "Pandas", "SQL", "Machine Learning", "Streamlit"],
-    github: "#",
+    desc: "Built an LSTM-based time series model on Yahoo Finance data and deployed a Streamlit web application for stock price prediction.",
+    stack: [
+      "Python",
+      "Pandas",
+      "SQL",
+      "Machine Learning",
+      "streamlit",
+      "Tensorflow",
+    ],
+    github: "https://github.com/naveen777-github/Stock-Market-Price-Prediction",
     demo: "#",
     category: "Software",
   },
   {
     title: "Sentimental Data Analysis",
-    desc: "Performed large-scale data profiling and quality assessment on textual datasets, identifying noise, sparsity, and 70K+ low-frequency features. Implemented and evaluated sentiment classification using Multinomial Naive Bayes, achieving up to 86.4% F1 score through systematic preprocessing and parameter tuning. Conducted misclassification analysis to evaluate model assumptions, statistical behavior, and data limitations.",
+    desc: "Performed text data profiling and quality analysis on reviews dataset, implemented sentimental classification using Multinomial Naive Bayes.",
     stack: ["Python", "NLP", "Scikit-learn", "Data Analysis"],
-    github: "#",
+    github:
+      "https://github.com/naveen777-github/Sentimental_Data_Analysis_Using_Multinomial_Naive_Bayes",
     demo: "#",
     category: "ML",
+  },
+
+  {
+    title: "Distributed Health Care Management System",
+    desc: "Built a distributed health care system with regional servers (MTL, QUE, SHE) using SOAP web services and UDP-based inter-server communication for consistency.",
+    stack: ["Java", "SOAP", "UDP", "Distributed Systems"],
+    github:
+      "https://github.com/naveen777-github/-Distributed-Health-Care-Management-System-Implementation-Using-Web-Service",
+    demo: "#", // optional (if you have a demo link)
+    category: "Software",
+  },
+  {
+    title: "Warzone Command-Line Strategy Game",
+    stack: ["Java", "OOP", "Design Patterns", "Maven", "JUnit"],
+    desc: "Developed a Java command-line strategy game using OOP principles and design patterns, implemented robust JUnit testing, Maven-based project management, and JavaDoc documentation to improve code readability and maintainability.",
+    github: "https://github.com/shanmukhatummala/game-engine",
+    demo: "#",
+    category: "Software",
+  },
+  {
+    title: "Today I Learned Application",
+    desc: "Built a full-stack app for posting daily facts and voting; integrated Supabase for auth + real-time data and deployed the frontend on Netlify.",
+    stack: ["React", "JavaScript", "Supabase", "HTML", "CSS", "Netlify"],
+    github: "https://github.com/naveen777-github/Today-I-Learned-Application",
+    demo: "https://todayilearned8888.netlify.app/",
+    category: "Software",
   },
 ];
 
@@ -46,60 +115,88 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl px-4 py-14">
         {/* Header */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm text-slate-400">Selected work</p>
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Projects
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+            <img src={versionControlGif} alt="Version control animation" />
+            <h1 className="text-3xl font-bold text-center sm:text-left">
+              PROJECTS
             </h1>
-            <p className="mt-2 max-w-2xl text-slate-300">
-              A few projects showcasing software engineering, data, and ML work.
+
+            <p className="mt-6 max-w-3xl text-slate-300 leading-relaxed">
+              Projects I’ve worked on, showcasing my experience in{" "}
+              <span className="text-cyan-300">software engineering</span>,
+              <span className="text-cyan-300"> machine learning</span>, and
+              <span className="text-cyan-300">
+                {" "}
+                data-driven application development
+              </span>
+              . Each project highlights my ability to design, implement, and
+              evaluate scalable solutions using modern tools and best practices.
             </p>
-          </div>
 
-          {/* Filter buttons */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => setFilter("All")}
-              className={`rounded-full px-4 py-2 text-sm border ${
-                filter === "All"
-                  ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                  : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-              }`}
-            >
-              All
-            </button>
-
-            <button
-              onClick={() => setFilter("ML")}
-              className={`rounded-full px-4 py-2 text-sm border ${
-                filter === "ML"
-                  ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                  : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-              }`}
-            >
-              ML
-            </button>
-
-            <button
-              onClick={() => setFilter("Software")}
-              className={`rounded-full px-4 py-2 text-sm border ${
-                filter === "Software"
-                  ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                  : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-              }`}
-            >
-              Software
-            </button>
+            <ul className="mt-6 space-y-3 text-slate-400">
+              <li>
+                • Designed and implemented end-to-end systems using Java,
+                Python, and React
+              </li>
+              <li>
+                • Built and evaluated machine learning models using PyTorch and
+                TensorFlow
+              </li>
+              <li>
+                • Applied software engineering principles such as modular
+                design, testing, and version control
+              </li>
+              <li>
+                • Deployed applications using cloud and CI/CD-friendly workflows
+              </li>
+            </ul>
           </div>
         </div>
 
+        {/* Filter buttons */}
+
+        <div className="flex mt-[90px] justify-center sm:justify-center lg:justify-end">
+          <button
+            onClick={() => setFilter("All")}
+            className={`rounded-full px-4 py-2 text-sm border ${
+              filter === "All"
+                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+            }`}
+          >
+            All
+          </button>
+
+          <button
+            onClick={() => setFilter("ML")}
+            className={`rounded-full px-4 py-2 text-sm border ${
+              filter === "ML"
+                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+            }`}
+          >
+            ML
+          </button>
+
+          <button
+            onClick={() => setFilter("Software")}
+            className={`rounded-full px-4 py-2 text-sm border ${
+              filter === "Software"
+                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+            }`}
+          >
+            Software
+          </button>
+        </div>
+
         {/* Grid */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((p) => (
             <article
               key={p.title}
-              className="group rounded-2xl border border-slate-800 bg-slate-900/40 p-5 shadow-sm transition
-                         hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-slate-900/60 hover:shadow-xl"
+              className="group  rounded-2xl border border-slate-800/10 bg-slate-900/100 p-5 shadow-sm transition
+                         hover:-translate-x-1 hover:border-cyan-400/35 hover:bg-slate-900/70 hover:shadow-xl"
             >
               <h2 className="text-lg font-semibold group-hover:text-cyan-200">
                 {p.title}
@@ -107,6 +204,20 @@ export default function Projects() {
               <p className="mt-2 max-w-prose text-sm leading-relaxed text-slate-300">
                 {p.desc}
               </p>
+
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                {p.stack?.map((skill) =>
+                  skillIcons[skill] ? (
+                    <img
+                      key={skill}
+                      src={skillIcons[skill]}
+                      alt={skill}
+                      title={skill}
+                      className="h-8 w-8"
+                    />
+                  ) : null,
+                )}
+              </div>
             </article>
           ))}
         </div>

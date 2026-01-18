@@ -15,6 +15,7 @@ import junitIcon from "../assets/Junit.svg";
 import TensflowIcon from "../assets/tensorflow-svgrepo-com.svg";
 import NumpyIcon from "../assets/numpy-svgrepo-com.svg";
 import versionControlGif from "../assets/Version control.gif";
+import { motion } from "framer-motion";
 
 const skillIcons = {
   Python: pythonIcon,
@@ -113,15 +114,20 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       {/* Header */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[40%_60%] items-start">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[40%_60%] items-start"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <img src={versionControlGif} alt="Version control animation" />
 
         <div className="self-start justify-self-center">
           <div className="flex justify-center">
-            <h1 className="text-3xl font-bold text-left mt-8 mb-5">PROJECTS</h1>
+            <h1 className="text-3xl font-bold text-left mt-4">PROJECTS</h1>
           </div>
 
-          <div className="mt-6 rounded-2xl p-6 sm:p-8">
+          <div className="mt-3 rounded-2xl p-6 sm:p-8">
             <p className="max-w-3xl text-slate-300 leading-relaxed">
               Projects I’ve worked on, showcasing my experience in{" "}
               <span className="text-cyan-300">software engineering</span>,
@@ -167,7 +173,7 @@ export default function Projects() {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Filter buttons */}
 
@@ -207,7 +213,13 @@ export default function Projects() {
       </div>
 
       {/* Grid */}
-      <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         {filteredProjects.map((p) => (
           <article
             key={p.title}
@@ -236,7 +248,7 @@ export default function Projects() {
             </div>
           </article>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

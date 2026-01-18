@@ -112,16 +112,17 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="mx-auto max-w-6xl px-4 py-14">
-        {/* Header */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
-            <img src={versionControlGif} alt="Version control animation" />
-            <h1 className="text-3xl font-bold text-center sm:text-left">
-              PROJECTS
-            </h1>
+      {/* Header */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[40%_60%] items-start">
+        <img src={versionControlGif} alt="Version control animation" />
 
-            <p className="mt-6 max-w-3xl text-slate-300 leading-relaxed">
+        <div className="self-start justify-self-center">
+          <div className="flex justify-center">
+            <h1 className="text-3xl font-bold text-left mt-8 mb-5">PROJECTS</h1>
+          </div>
+
+          <div className="mt-6 rounded-2xl p-6 sm:p-8">
+            <p className="max-w-3xl text-slate-300 leading-relaxed">
               Projects I’ve worked on, showcasing my experience in{" "}
               <span className="text-cyan-300">software engineering</span>,
               <span className="text-cyan-300"> machine learning</span>, and
@@ -133,94 +134,108 @@ export default function Projects() {
               evaluate scalable solutions using modern tools and best practices.
             </p>
 
-            <ul className="mt-6 space-y-3 text-slate-400">
-              <li>
-                • Designed and implemented end-to-end systems using Java,
-                Python, and React
+            <div className="mt-6 h-px w-full " />
+
+            <ul className="mt-6 space-y-3 text-slate-300">
+              <li className="flex gap-3">
+                <span className="mt-1 text-cyan-300">•</span>
+                <span>
+                  Designed and implemented end-to-end systems using Java,
+                  Python, and React
+                </span>
               </li>
-              <li>
-                • Built and evaluated machine learning models using PyTorch and
-                TensorFlow
+              <li className="flex gap-3">
+                <span className="mt-1 text-cyan-300">•</span>
+                <span>
+                  Built and evaluated machine learning models using PyTorch and
+                  TensorFlow
+                </span>
               </li>
-              <li>
-                • Applied software engineering principles such as modular
-                design, testing, and version control
+              <li className="flex gap-3">
+                <span className="mt-1 text-cyan-300">•</span>
+                <span>
+                  Applied software engineering principles such as modular
+                  design, testing, and version control
+                </span>
               </li>
-              <li>
-                • Deployed applications using cloud and CI/CD-friendly workflows
+              <li className="flex gap-3">
+                <span className="mt-1 text-cyan-300">•</span>
+                <span>
+                  Deployed applications using cloud and CI/CD-friendly workflows
+                </span>
               </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Filter buttons */}
+      {/* Filter buttons */}
 
-        <div className="flex mt-[90px] justify-center sm:justify-center lg:justify-end">
-          <button
-            onClick={() => setFilter("All")}
-            className={`rounded-full px-4 py-2 text-sm border ${
-              filter === "All"
-                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-            }`}
-          >
-            All
-          </button>
+      <div className="flex mt-[30px] justify-center sm:justify-center lg:justify-end">
+        <button
+          onClick={() => setFilter("All")}
+          className={`rounded-full px-4 py-2 text-sm border ${
+            filter === "All"
+              ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+              : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+          }`}
+        >
+          All
+        </button>
 
-          <button
-            onClick={() => setFilter("ML")}
-            className={`rounded-full px-4 py-2 text-sm border ${
-              filter === "ML"
-                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-            }`}
-          >
-            ML
-          </button>
+        <button
+          onClick={() => setFilter("ML")}
+          className={`rounded-full px-4 py-2 text-sm border ${
+            filter === "ML"
+              ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+              : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+          }`}
+        >
+          ML
+        </button>
 
-          <button
-            onClick={() => setFilter("Software")}
-            className={`rounded-full px-4 py-2 text-sm border ${
-              filter === "Software"
-                ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
-                : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
-            }`}
-          >
-            Software
-          </button>
-        </div>
+        <button
+          onClick={() => setFilter("Software")}
+          className={`rounded-full px-4 py-2 text-sm border ${
+            filter === "Software"
+              ? "bg-cyan-400/20 text-cyan-200 border-cyan-400/30"
+              : "bg-slate-900 text-slate-300 border-slate-800 hover:border-cyan-400/30 hover:text-cyan-200"
+          }`}
+        >
+          Software
+        </button>
+      </div>
 
-        {/* Grid */}
-        <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((p) => (
-            <article
-              key={p.title}
-              className="group  rounded-2xl border border-slate-800/10 bg-slate-900/100 p-5 shadow-sm transition
+      {/* Grid */}
+      <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {filteredProjects.map((p) => (
+          <article
+            key={p.title}
+            className="group  rounded-2xl border border-slate-800/10 bg-slate-900/100 p-5 shadow-sm transition
                          hover:-translate-x-1 hover:border-cyan-400/35 hover:bg-slate-900/70 hover:shadow-xl"
-            >
-              <h2 className="text-lg font-semibold group-hover:text-cyan-200">
-                {p.title}
-              </h2>
-              <p className="mt-2 max-w-prose text-sm leading-relaxed text-slate-300">
-                {p.desc}
-              </p>
+          >
+            <h2 className="text-lg font-semibold group-hover:text-cyan-200">
+              {p.title}
+            </h2>
+            <p className="mt-2 max-w-prose text-sm leading-relaxed text-slate-300">
+              {p.desc}
+            </p>
 
-              <div className="mt-4 flex flex-wrap items-center gap-4">
-                {p.stack?.map((skill) =>
-                  skillIcons[skill] ? (
-                    <img
-                      key={skill}
-                      src={skillIcons[skill]}
-                      alt={skill}
-                      title={skill}
-                      className="h-8 w-8"
-                    />
-                  ) : null,
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
+            <div className="mt-4 flex flex-wrap items-center gap-4">
+              {p.stack?.map((skill) =>
+                skillIcons[skill] ? (
+                  <img
+                    key={skill}
+                    src={skillIcons[skill]}
+                    alt={skill}
+                    title={skill}
+                    className="h-8 w-8"
+                  />
+                ) : null,
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   );

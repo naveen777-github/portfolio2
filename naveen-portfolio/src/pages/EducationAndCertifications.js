@@ -1,48 +1,74 @@
 import Graduation from "../assets/graduation hats.gif";
+import Lbrce from "../assets/lbrce-mylavaram-management-quota.avif";
+import concordia from "../assets/download.jpeg";
 
 export default function EducationAndCertifications() {
   return (
     <div className="page">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[60%_40%] gap-8 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-1 items-start">
         {/* LEFT: Degree Cards */}
-        <div className="space-y-6">
-          {/* Card 1 */}
-          <div
-            className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 shadow-sm
-                      transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <h3 className="text-xl font-semibold mb-2">
+        <div
+          className="w-[320px] overflow-hidden rounded-xl 
+                 bg-slate-900/100 border border-zinc-800
+
+                hover:-translate-x-1 hover:border-cyan-400/35 hover:bg-slate-900/70 hover:shadow-xl"
+        >
+          {/* Image */}
+          <div className="h-[260px] w-full overflow-hidden">
+            <img
+              src={concordia}
+              alt="Concordia University"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-zinc-100">
               Master’s in Applied Computer Science
             </h3>
-            <p className="text-sm text-zinc-400 mb-1">Concordia University</p>
-            <p className="text-sm text-zinc-300">
-              Focused on software engineering, distributed systems, and machine
-              learning.
-            </p>
+
+            <p className="mt-2 text-sm text-zinc-400">Concordia University</p>
 
             <a
               href="https://www.concordia.ca"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-xl bg-zinc-800 px-4 py-2 text-white hover:bg-zinc-700"
+              className="mt-4 inline-flex items-center text-sm font-medium
+                 text-cyan-400 hover:text-cyan-300"
             >
-              Concordia University
+              Visit Website →
             </a>
           </div>
 
-          {/* Card 2 */}
-          <div
-            className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 shadow-sm
-                      transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <h3 className="text-xl font-semibold mb-2">
-              B.Tech in Computer Science Engineering
+          {/* Image */}
+          <div className="h-[260px] w-full overflow-hidden">
+            <img
+              src={Lbrce}
+              alt="Laki Reddy Balireddy College of Engineering"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Master’s in Applied Computer Science
             </h3>
-            <p className="text-sm text-zinc-400 mb-1">Undergraduate Degree</p>
-            <p className="text-sm text-zinc-300">
-              Strong foundation in data structures, algorithms, and core CS
-              concepts.
+
+            <p className="mt-2 text-sm text-zinc-400">
+              Laki Reddy Balireddy College of Engineering
             </p>
+
+            <a
+              href="https://lbrce.ac.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center text-sm font-medium
+                 text-cyan-400 hover:text-cyan-300"
+            >
+              Visit Website →
+            </a>
           </div>
         </div>
 

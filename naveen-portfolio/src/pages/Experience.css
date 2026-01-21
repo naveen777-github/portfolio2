@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ExpList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+  list-style: none;
+  justify-items: center;
+}
+
+.ExplistItems {
+  text-align: center;
+  width: 100%; /* optional: makes centering consistent */
+}

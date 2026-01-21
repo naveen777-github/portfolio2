@@ -10,9 +10,9 @@ const Card = ({ img, alt, title, school, link }) => (
   <motion.div
     className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-slate-900/100
                transition hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-slate-900/70 hover:shadow-xl"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
+    initial={{ opacity: 0, x: 30 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.6, delay: 0.2 }}
   >
     {/* Image */}
     <div className="h-[300px] sm:h-[220px] w-full overflow-hidden">
@@ -40,8 +40,17 @@ export default function EducationAndCertifications() {
   return (
     <div className="page">
       {/* Top Grid */}
-
-      <div className="grid grid-cols-1 lg:grid-cols-[40%_28%_28%] gap-6 items-start">
+      <motion.div
+        className="self-start justify-self-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className="flex justify-center">
+          <h1 className="text-3xl font-bold text-left mt-4">EDUCATION</h1>
+        </div>
+      </motion.div>
+      <div className="grid mt-5 grid-cols-1 lg:grid-cols-[40%_28%_28%] gap-6 items-start">
         <div className="w-full">
           <img
             src={Graduation}
@@ -49,6 +58,7 @@ export default function EducationAndCertifications() {
             className="w-full h-[270px] sm:h-[420px] lg:h-[620px] object-cover"
           />
         </div>
+
         <Card
           img={concordia}
           alt="Concordia University"
@@ -65,7 +75,7 @@ export default function EducationAndCertifications() {
           link="https://lbrce.ac.in/"
         />
 
-        <section
+        <div
           className="
               col-span-1 order-last 
               sm:order-none sm:mt-10
@@ -76,51 +86,63 @@ export default function EducationAndCertifications() {
               hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-slate-900/70 hover:shadow-xl
             "
         >
-          <h3 className="flex justify-center  text-xl font-semibold text-zinc-100">
-            Certifications
-          </h3>
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="flex justify-center  text-xl font-semibold text-zinc-100">
+              Certifications
+            </h3>
 
-          <ul className="mt-4 flex flex-row items-center  justify-center flex-wrap gap-6 text-zinc-300">
-            <li className="flex gap-3">
-              <a
-                href="https://www.credly.com/earner/earned/badge/1bf81830-938b-4040-9143-b1878c78e498"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <img
-                  src={cloudPractitioner}
-                  className="sm:h-[100px] lg:h-[100px]"
-                />
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <a
-                href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-associate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <img
-                  src={solutionsArchitec}
-                  alt="AWS Solutions Architect badge"
-                  className="sm:h-[100px] lg:h-[100px] cursor-pointer"
-                />
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <a
-                href="https://www.hackerrank.com/certificates/47cc97720837"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <img src={Hackerrank} className="sm:h-[400px] lg:h-[90px]" />
-              </a>
-            </li>
-          </ul>
-        </section>
+            <ul className="mt-4 flex flex-row items-center  justify-center flex-wrap gap-6 text-zinc-300">
+              <li className="flex gap-3">
+                <a
+                  href="https://www.credly.com/earner/earned/badge/1bf81830-938b-4040-9143-b1878c78e498"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={cloudPractitioner}
+                    className="sm:h-[100px] lg:h-[100px]"
+                  />
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <a
+                  href="https://www.credly.com/org/amazon-web-services/badge/aws-certified-solutions-architect-associate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={solutionsArchitec}
+                    alt="AWS Solutions Architect badge"
+                    className="sm:h-[100px] lg:h-[100px] cursor-pointer"
+                  />
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <a
+                  href="https://www.hackerrank.com/certificates/47cc97720837"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img src={Hackerrank} className="sm:h-[400px] lg:h-[90px]" />
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
       </div>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <p>© {new Date().getFullYear()} Naveen Rayapudi</p>
+        </div>
+      </footer>
     </div>
   );
 }

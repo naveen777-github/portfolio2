@@ -249,6 +249,12 @@ export default function Projects() {
           </article>
         ))}
       </motion.div>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <p>© {new Date().getFullYear()} Naveen Rayapudi</p>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -58,6 +58,7 @@
   background: rgba(15, 23, 42, 0.7);
   border-radius: 18px;
   padding: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
 }
 
 .topRow {
@@ -98,6 +99,8 @@
 
 .btn:hover {
   background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #22d3ee;
+
 }
 
 .tagline {
@@ -162,18 +165,64 @@
   color: #22d3ee;
   padding: 10px;
 }
-.careerpathimage {
-  display: flex;
 
-  justify-content: end;
-  border-radius: 100%;
-  width: 500px;
-  height: 400px;
-}
+
+
+
+
+{/*image*/}
 
 .imagecontainer {
   display: flex;
-  justify-content: start;
+  width: 100%;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+
+.careerpath{
+  display: flex;
+  width: 500px;
+  height: 400px;
+
+
+  border-radius: 50%;          /* oval/circle correctly */
+
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+
+.careerpath:hover {
+  border: 2px solid #22d3ee;
+}
+
+
+.title {
+  display: flex;
+  padding: 40px 0;
+  margin-left: 100px;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.about-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e2e8f0; /* slate-100 */
+  margin-bottom: 14px;
+}
+
+.about-text {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cbd5e1; /* slate-300 */
+}
+
+.highlight {
+  color: #67e8f9; /* cyan-ish */
+  font-weight: 600;
 }

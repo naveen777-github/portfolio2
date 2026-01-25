@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #020617;
+  padding: 40px 20px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  background-color: #020617;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Column */
+.contact-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Column */
+.contact-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-heading {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #38bdf8;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.contact-info-text {
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #0284c7;
+  text-decoration: underline;
+}
+
+/* Download Resume Button */
+.resume-download-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  width: fit-content;
+}
+
+.resume-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Contact Form Styles */
+.contact-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-title {
+  margin-bottom: 25px;
+}
+
+.contact-form-heading {
+  color: #020617;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+  border: none;
+}
+
+.contact-form-icon {
+  display: flex;
+  color: #38bdf8;
+}
+
+.form-input-group {
+  margin-bottom: 20px;
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: 15px;
+  color: #020617;
+  font-size: 18px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  color: #020617;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-checkbox-group {
+  margin: 20px 0;
+}
+
+.form-checkbox-label {
+  color: #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form-checkbox-hidden {
+  display: none;
+}
+
+.form-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+}
+
+.form-result {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .contact-container img {
+    max-width: 300px;
+  }
+
+  .contact-heading {
+    font-size: 24px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+}

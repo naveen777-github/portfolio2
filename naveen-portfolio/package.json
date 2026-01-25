@@ -2,8 +2,11 @@
   "name": "naveen-portfolio",
   "private": true,
   "dependencies": {
-    "framer-motion": "^12.24.12",
+    "framer-motion": "^12.29.0",
+    "gsap": "^3.14.2",
+    "motion": "^12.29.0",
     "react": "^19.2.3",
+    "react-bits": "^1.0.5",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.11.0",

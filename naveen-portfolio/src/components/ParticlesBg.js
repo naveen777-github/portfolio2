@@ -12,15 +12,15 @@ export default function ParticlesBg() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: { enable: true }, // IMPORTANT (we control size with CSS)
+        fullScreen: { enable: false },
         background: { color: "transparent" },
         fpsLimit: 60,
         detectRetina: true,
         particles: {
-          number: { value: 200, density: { enable: true, area: 900 } },
+          number: { value: 300, density: { enable: true, area: 680 } },
           color: { value: "#7DD3FC" },
           links: {
-            enable: true,
+            enable: false,
             color: "#38BDF8",
             distance: 100,
             opacity: 2,

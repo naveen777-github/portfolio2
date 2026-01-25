@@ -154,6 +154,13 @@ export default function ExperienceTimeline() {
           })}
         </div>
       </section>
+
+      <footer className="main-footerE" id="contactme">
+        <p>
+          &copy; {new Date().getFullYear()} Naveen Rayapudi. All rights
+          reserved.
+        </p>
+      </footer>
     </section>
   );
 }

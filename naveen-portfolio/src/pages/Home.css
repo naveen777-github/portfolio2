@@ -15,13 +15,29 @@ body {
   position: relative;
 }
 
-/* particles layer */
-.particlesWrap {
+#tsparticles {
   position: absolute;
-  inset: 1;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Viewport width - ignores parent */
+  height: 75vh;
   z-index: 0;
-  pointer-events: none; /* so buttons/links still clickable */
-  width: 100%;
+  pointer-events: none;
+  margin-left: calc(-50vw + 50%); /* Centers it if parent is not full width */
+}
+
+.displayTitle {
+  display: flex;
+  font-size: 42px;
+  margin-top: 30px;
+  font-weight: 500; /* Make it bold like h1 */
+  line-height: 1.1;
+  color: #e5e7eb;
+}
+
+.part {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .hero {
@@ -32,27 +48,20 @@ body {
 .hero,
 .split,
 .middle-title {
+  margin-top: 100px;
   position: relative;
   z-index: 1;
 }
 
 /* Badge */
 .badge {
-  display: inline-block;
+  display: flex;
   padding: 6px 14px;
   border: 1px solid #38bdf8;
   border-radius: 999px;
   font-size: 14px;
   color: #38bdf8;
   width: fit-content;
-}
-
-/* Name */
-.title {
-  font-size: 48px;
-  line-height: 1.1;
-  margin: 0;
-  color: #e5e7eb;
 }
 
 /* Summary text */
@@ -84,9 +93,7 @@ body {
 
 /* Primary button */
 .btn-primary {
-  background: #38bdf8;
   color: #020617;
-
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -94,28 +101,15 @@ body {
 
 .btn-primary:hover {
   opacity: 0.9;
+  background-color: #38bdf8;
 }
 
 .btn-arrow {
   transition: transform 0.2s ease;
-  color: #020617;
-  background-color: #38bdf8;
 }
 
 .btn-primary:hover .btn-arrow {
   transform: translateX(4px);
-}
-
-/* Secondary button */
-.btn-secondary {
-  background: transparent;
-  color: #e5e7eb;
-  border-color: #64748b;
-}
-
-.btn-secondary:hover {
-  border-color: #38bdf8;
-  color: #38bdf8;
 }
 
 /* Social links */
@@ -274,14 +268,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 /* Mobile */
 @media (max-width: 600px) {
   /* Main hero container */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+  #tsparticles {
+    position: absolute;
+
+    width: 100vw; /* Viewport width - ignores parent */
+    height: 115vh;
+    z-index: 0;
+    pointer-events: none;
   }
 
   /* Badge */
@@ -290,8 +288,15 @@ body {
   }
 
   /* Title */
-  .title {
-    text-align: center;
+  .displayTitle {
+    display: flex;
+    font-size: 42px;
+    margin-top: 30px;
+    font-weight: 500; /* Make it bold like h1 */
+    line-height: 1.1;
+    align-items: center;
+    justify-content: center;
+    color: #e5e7eb;
   }
 
   /* Subtitle text */
@@ -331,6 +336,51 @@ body {
     max-width: 300px;
   }
 
+  .btn {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    color: #020617;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    background-color: #38bdf8;
+  }
+
+  .btn-arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  .stack-item {
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+
+    border: 1px solid #64748b;
+    color: #e5e7eb;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    align-content: center;
+    background-color: #64748b;
+    border-radius: 24px;
+  }
+
   /* Social links */
   .social {
     justify-content: center;
@@ -350,5 +400,61 @@ body {
   .split h2 {
     justify-content: center;
     align-items: center;
+  }
+}
+
+/* Footer */
+.main-footer {
+  position: absolute;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: #e5e7eb;
+  padding: 60px 24px 40px;
+  margin-top: 100px;
+  text-align: center;
+
+  width: 100vw;
+}
+
+.main-footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 48%);
+  padding: 60px calc(50vw - 550px);
+}
+
+.main-footer p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Copyright text */
+.main-footer p:last-child {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #94a3b8;
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .main-footer {
+    padding: 40px 20px 30px;
+  }
+
+  .main-footer p {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .main-footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 45%);
+    padding: 60px calc(50vw - 550px);
   }
 }

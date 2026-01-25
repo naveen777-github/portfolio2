@@ -250,10 +250,11 @@ export default function Projects() {
         ))}
       </motion.div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <p>© {new Date().getFullYear()} Naveen Rayapudi</p>
-        </div>
+      <footer className="main-footer" id="contactme">
+        <p>
+          &copy; {new Date().getFullYear()} Naveen Rayapudi. All rights
+          reserved.
+        </p>
       </footer>
     </div>
   );

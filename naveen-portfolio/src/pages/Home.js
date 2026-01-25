@@ -36,101 +36,99 @@ import {
 
 import { FaArrowRight } from "react-icons/fa";
 import ParticlesBg from "../components/ParticlesBg";
+import BlurText from "../components/Blur";
+// No curly braces - it's a default export
 
 export default function Home() {
   return (
     <main className="home">
-      <section className="hero">
+      {/* Particles Background */}
+
+      <header className="particlesWrap">
+        <ParticlesBg />
+      </header>
+
+      <motion.span
+        className="badge"
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Open to Software / Data roles
+      </motion.span>
+
+      {/* Title slides from left */}
+
+      <BlurText
+        text="Hi, I'm Naveen Rayapudi."
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="displayTitle"
+      />
+
+      <div className="hero2">
         {/* Badge */}
 
-        <div className="particlesWrap">
-          <ParticlesBg />
-        </div>
-
-        <motion.span
-          className="badge screen"
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Open to Software / Data roles
-        </motion.span>
-
-        {/* Title slides from left */}
-        <motion.h1
-          className="title screen"
+        {/* LEFT: Text */}
+        <motion.p
+          className="subtitle"
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Hi, I’m Naveen Rayapudi.
-        </motion.h1>
+          Master's student in Applied Computer Science at Concordia University
+          with experience in building full-stack applications and data/ML
+          projects using Java, Python, SQL, React, and cloud technologies.
+        </motion.p>
 
-        <div className="hero2 screen">
-          {/* LEFT: Text */}
-          <motion.p
-            className="subtitle"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+        {/* RIGHT: Image */}
+        <motion.div
+          className="heroRight"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <img src={painting} alt="Data visualization" className="heroImg" />
+        </motion.div>
+
+        {/* Buttons slide up */}
+        <motion.div
+          className="actions"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
+          <Link className="btn btn-primary" to="/projects">
+            View Projects <FaArrowRight className="btn-arrow" />
+          </Link>
+        </motion.div>
+
+        {/* Social links fade in */}
+        <motion.div
+          className="social"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <a
+            href="https://github.com/naveen777-github"
+            target="_blank"
+            rel="noreferrer"
           >
-            Master’s student in Applied Computer Science at Concordia University
-            with hands-on experience building full-stack applications and
-            data/ML projects using Python, SQL, React, and cloud technologies.
-          </motion.p>
-
-          {/* RIGHT: Image */}
-          <motion.div
-            className="heroRight"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            <FaGithub size={26} />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rayapudi-naveen-6042a5190/"
+            target="_blank"
+            rel="noreferrer"
           >
-            <img src={painting} alt="Data visualization" className="heroImg" />
-          </motion.div>
-
-          {/* Buttons slide up */}
-          <motion.div
-            className="actions"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-          >
-            <Link className="btn btn-primary" to="/experience">
-              View Projects <FaArrowRight className="btn-arrow" />
-            </Link>
-
-            <a className="btn btn-secondary" href="/resume.pdf" download>
-              Download Resume
-            </a>
-          </motion.div>
-
-          {/* Social links fade in */}
-          <motion.div
-            className="social"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <a
-              href="https://github.com/naveen777-github"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub size={26} />
-              <span>GitHub</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rayapudi-naveen-6042a5190/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedin size={26} />
-              <span>LinkedIn</span>
-            </a>
-          </motion.div>
-        </div>
-      </section>
+            <FaLinkedin size={26} />
+            <span>LinkedIn</span>
+          </a>
+        </motion.div>
+      </div>
 
       <section className="middle-title">
         <motion.h2
@@ -139,10 +137,9 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          WHAT I’M GOOD AT
+          WHAT I'M GOOD AT
         </motion.h2>
       </section>
-
       {/* Software Engineering Section */}
       <section className="split">
         {/* GIF – slides from LEFT */}
@@ -223,7 +220,6 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-
       {/* Data / ML Section */}
       <section className="split data">
         {/* Stack – slides from LEFT */}
@@ -305,10 +301,11 @@ export default function Home() {
         />
       </section>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <p>© {new Date().getFullYear()} Naveen Rayapudi</p>
-        </div>
+      <footer className="main-footer" id="contactme">
+        <p>
+          &copy; {new Date().getFullYear()} Naveen Rayapudi. All rights
+          reserved.
+        </p>
       </footer>
     </main>
   );

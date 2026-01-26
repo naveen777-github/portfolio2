@@ -1,7 +1,7 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import painting from "../assets/painting.png";
+import painting from "../assets/Nerd-pana-bg.svg";
 import {
   FaJava,
   FaPython,

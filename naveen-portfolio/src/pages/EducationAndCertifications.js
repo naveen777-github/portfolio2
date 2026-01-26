@@ -15,7 +15,7 @@ const Card = ({ img, alt, title, school, link }) => (
     transition={{ duration: 0.6, delay: 0.2 }}
   >
     {/* Image */}
-    <div className="h-[300px] sm:h-[220px] w-full overflow-hidden">
+    <div className="h-[200px] sm:h-[200px] w-full overflow-hidden">
       <img src={img} alt={alt} className="w-full h-full object-cover" />
     </div>
 
@@ -63,7 +63,7 @@ export default function EducationAndCertifications() {
           img={concordia}
           alt="Concordia University"
           title="Master’s in Applied Computer Science"
-          school="Concordia University"
+          school="Concordia University (2024-2025)"
           link="https://www.concordia.ca"
         />
 
@@ -71,7 +71,7 @@ export default function EducationAndCertifications() {
           img={Lbrce}
           alt="Laki Reddy Balireddy College of Engineering"
           title="B.Tech in Computer Science Engineering"
-          school="Laki Reddy Balireddy College of Engineering"
+          school="Laki Reddy Balireddy College of Engineering (2019-2023)"
           link="https://lbrce.ac.in/"
         />
 
@@ -79,7 +79,7 @@ export default function EducationAndCertifications() {
           className="
               col-span-1 order-last 
               sm:order-none sm:mt-10
-              lg:-mr-[50.75rem]
+              lg:-mr-[40.75rem]
               lg:-mt-[70.75rem]
               justify-self-end self-end
               w-full rounded-2xl border border-zinc-800 bg-slate-900/80 p-6
@@ -88,7 +88,8 @@ export default function EducationAndCertifications() {
         >
           <motion.div
             initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7 }}
           >
             <h3 className="flex justify-center  text-xl font-semibold text-zinc-100">

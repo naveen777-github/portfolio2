@@ -29,7 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   max-width: 600px;
   height: auto;
@@ -60,9 +59,13 @@
   line-height: 1.6;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
+.contact-info-text a {
+  color: white;
+}
 .contact-link {
   color: #38bdf8;
   text-decoration: none;
@@ -75,9 +78,14 @@
   text-decoration: underline;
 }
 
+.download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Download Resume Button */
 .resume-download-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0284c7;
   color: white;
   border: none;
   padding: 12px 30px;
@@ -86,7 +94,6 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   width: fit-content;
 }
 

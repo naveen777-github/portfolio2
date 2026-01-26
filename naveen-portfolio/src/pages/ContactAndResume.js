@@ -4,9 +4,53 @@ import "../pages/ContactAndResume.css";
 import TiltedCard from "../components/TiltedCard ";
 
 import ElectricBorder from "../components/ElectricBorder";
-import { FaEnvelope, FaPhone, FaArrowUp, FaLinkedin } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaArrowUp,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { color } from "framer-motion";
 
 export default function ContactAndResume() {
+  const [dimensions, setDimensions] = useState({
+    containerHeight: "800px",
+    containerWidth: "570px",
+    imageHeight: "800px",
+    imageWidth: "570px",
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 700) {
+        setDimensions({
+          containerHeight: "280px",
+          containerWidth: "280px",
+          imageHeight: "285px",
+          imageWidth: "285px",
+        });
+      } else {
+        setDimensions({
+          containerHeight: "800px",
+          containerWidth: "570px",
+          imageHeight: "800px",
+          imageWidth: "570px",
+        });
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="contact-page">
       <div className="contact-container">
@@ -20,10 +64,10 @@ export default function ContactAndResume() {
           >
             <TiltedCard
               imageSrc={img1}
-              containerHeight="800px"
-              containerWidth="570px"
-              imageHeight="800px"
-              imageWidth="570px"
+              containerHeight={dimensions.containerHeight}
+              containerWidth={dimensions.containerWidth}
+              imageHeight={dimensions.imageHeight}
+              imageWidth={dimensions.imageWidth}
               rotateAmplitude={12}
               scaleOnHover={1.05}
               showMobileWarning={false}
@@ -36,7 +80,7 @@ export default function ContactAndResume() {
         <div className="contact-content-column">
           <h2 className="contact-heading">Contact Me</h2>
           <p className="contact-info-text">
-            Feel free to reach out for collaborations or inquiries!
+            <strong>Feel free to reach out to me !</strong>
           </p>
 
           <p className="contact-info-text">
@@ -51,19 +95,30 @@ export default function ContactAndResume() {
           </p>
 
           <p className="contact-info-text">
-            <FaLinkedin size={24} color="#38bdf8" />
-            LinkedIn:{" "}
+            <a
+              href="https://github.com/naveen777-github"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-link"
+            >
+              <FaGithub size={26} color="#38bdf8" />
+              GitHub
+            </a>
+
             <a
               href="https://www.linkedin.com/in/rayapudi-naveen-6042a5190"
               target="_blank"
               rel="noreferrer"
               className="contact-link"
             >
-              Naveen Rayapudi
+              <FaLinkedin size={24} color="#38bdf8" />
+              LinkedIn{" "}
             </a>
           </p>
 
-          <button className="resume-download-btn">Download Resume</button>
+          <div className="download-btn">
+            <button className="resume-download-btn">Download Resume</button>
+          </div>
 
           <form method="POST" id="get-in-touch" className="contact-form">
             <div className="contact-form-title">

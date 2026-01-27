@@ -4,6 +4,8 @@ import "../pages/ContactAndResume.css";
 import TiltedCard from "../components/TiltedCard ";
 
 import ElectricBorder from "../components/ElectricBorder";
+import resume from "../assets/Naveen_Rayapudi.pdf";
+
 import {
   FaEnvelope,
   FaPhone,
@@ -117,23 +119,26 @@ export default function ContactAndResume() {
           </p>
 
           <div className="download-btn">
-            <button className="resume-download-btn">Download Resume</button>
+            <button
+              onClick={() => window.open(resume, "_blank")}
+              className="resume-download-btn"
+            >
+              Download Resume
+            </button>
           </div>
 
-          <form method="POST" id="get-in-touch" className="contact-form">
+          <form
+            onSubmit={handleSubmit}
+            id="get-in-touch"
+            className="contact-form"
+          >
+            {" "}
             <div className="contact-form-title">
               <h2 className="contact-form-heading">
                 <i className="contact-form-icon fas fa-paper-plane"></i> Get In
                 Touch
               </h2>
             </div>
-
-            <input
-              type="hidden"
-              name="access_key"
-              value="1b806654-8e85-4241-a570-97b667a81e83"
-            />
-
             <div className="form-input-group">
               <div className="form-input-wrapper">
                 <i className="form-input-icon fas fa-user"></i>
@@ -147,7 +152,6 @@ export default function ContactAndResume() {
                 />
               </div>
             </div>
-
             <div className="form-input-group">
               <div className="form-input-wrapper">
                 <i className="form-input-icon fas fa-envelope"></i>
@@ -161,7 +165,6 @@ export default function ContactAndResume() {
                 />
               </div>
             </div>
-
             <div className="form-input-group">
               <div className="form-input-wrapper">
                 <i className="form-input-icon fas fa-comment-dots"></i>
@@ -174,20 +177,9 @@ export default function ContactAndResume() {
                 ></textarea>
               </div>
             </div>
-
-            <div className="form-checkbox-group">
-              <input
-                type="checkbox"
-                name="botcheck"
-                className="form-checkbox-hidden"
-                style={{ display: "none" }}
-              />
-            </div>
-
             <button type="submit" className="form-submit-btn">
               <i className="fas fa-paper-plane"></i> Submit Form
             </button>
-
             <div id="result" className="form-result"></div>
           </form>
         </div>

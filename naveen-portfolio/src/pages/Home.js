@@ -99,6 +99,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
+          <Link className="btn btn-secondary" to="/contact">
+            Contact And Resume
+          </Link>
           <Link className="btn btn-primary" to="/projects">
             View Projects <FaArrowRight className="btn-arrow" />
           </Link>
